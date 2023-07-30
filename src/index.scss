@@ -1,0 +1,22 @@
+$main: #57779f;
+$secondary: #e0bc66;
+$white: #f9f6f1;
+$grey: #b4bcc3;
+$black: #1c1c1c;
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: $white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::selection {
+    background-color: $main;
+    color: $white;
+}
+
+ 

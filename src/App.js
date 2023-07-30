@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./index.css";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./assets/style/theme";
+import Header from "./components/HeaderSection";
+import { ViewContainer } from "./components/organism/ViewContainer";
+import { Input } from "./components/atom/Input";
+import { TextArea } from "./components/atom/TextArea";
+import { Button } from "./components/atom/Button";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <ViewContainer isLight>
+          <Input placeholder="Title" />
+          <TextArea placeholder="Description" />
+          <Button>Add</Button>
+        </ViewContainer>
+        <ViewContainer>
+          <ol>
+            <li>cos tam
+              <p>cosss tam dooaslknsa</p>
+            </li>
+            <li>cos tam 2 </li>
+            <li>cos tam 3</li>
+          </ol>
+        </ViewContainer>
+      </ThemeProvider>
+    </>
   );
-}
+};
 
 export default App;
