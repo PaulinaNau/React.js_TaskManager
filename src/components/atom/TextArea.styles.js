@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 
-export const TextArea = styled.textarea`
+export const StyledTextArea = styled.textarea`
     width: 80%;
-    height: 100px;
+    height: 60px;
     text-align: center;
     border-radius: 20px;
     border: none;
@@ -13,7 +13,8 @@ export const TextArea = styled.textarea`
     font-size: ${({ theme }) => theme.fontSize.m};
     font-weight: 400;
     margin: 10px;
-    padding: 0;
+    padding: 5px 10px;
+    
   
   &:hover {
     border: 1px solid ${({ theme }) => theme.color.grey};

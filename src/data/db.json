@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "title": "Title One",
+      "author": "Johny",
+      "content": "Lorem ipsum",
+      "id": "1"
+    },
+    {
+      "title": "Title",
+      "author": "Carol",
+      "content": "Lorem ipsum",
+      "id": "2"
+    },
+    {
+      "title": "Title",
+      "author": "Emily",
+      "content": "Lorem ipsum",
+      "id": "3"
+    },
+    {
+      "title": "Title",
+      "author": "Julia",
+      "content": "Lorem ipsum",
+      "id": "4"
+    }
+  ]
+}

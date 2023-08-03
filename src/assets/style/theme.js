@@ -5,6 +5,8 @@ export const theme = {
     secondary: "#f1e9d6",
     grey: "#b4bcc3",
     white: "#f9f6f1",
+    red: "#da6c6c",
+    success: "#7cbc8a",
   },
   fontSize: {
     xl: "35px",
