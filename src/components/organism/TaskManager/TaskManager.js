@@ -10,7 +10,7 @@ const TaskManager = () => {
     <>
       <StyledHeader>Personal Task Manager</StyledHeader>
       <InputForm />
-      <TaskList />
+     
     </>
   );
 };

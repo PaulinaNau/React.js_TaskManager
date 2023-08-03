@@ -14,20 +14,7 @@ export const StyledTextArea = styled.textarea`
     font-weight: 400;
     margin: 10px;
     padding: 5px 10px;
-    
-  
-  &:hover {
-    border: 1px solid ${({ theme }) => theme.color.grey};
     outline: none;
-  }
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.color.main};
-    outline: none;
-  }
-  &:active {
-    border: 1px solid ${({ theme }) => theme.color.main};
-    outline: none;
-  }
   
   &::placeholder {
     font-family: 'Poppins', sans-serif;

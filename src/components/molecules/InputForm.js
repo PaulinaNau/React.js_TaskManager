@@ -4,14 +4,28 @@ import { StyledInput } from "../atom/Input.styles";
 import { StyledTextArea } from "../atom/TextArea.styles";
 import { StyledButton } from "../atom/Button.styles";
 import { useState } from "react";
+import { TaskData } from "../../data/TaskData";
+import TaskList from "./TaskList";
+
+
 
 const InputForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [taskList, setTaskList] = useState(TaskData);
 
   const handleAddTask = (e) => {
     e.preventDefault();
-    console.log("cos tam");
+
+    const newTask = {
+        title: title,
+        body: description,
+        id: 2,
+      };
+      setTaskList([newTask, ...taskList]);
+      console.log(TaskData);
+      setTitle("");
+      setDescription("");
   };
 
   return (
@@ -39,6 +53,7 @@ const InputForm = () => {
           </div>
         </form>
       </StyledWrapper>
+      <TaskList taskList={taskList}/>
     </>
   );
 };

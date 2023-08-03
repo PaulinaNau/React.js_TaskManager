@@ -6,14 +6,12 @@ import {
 import { TaskTitle, TaskDescription } from "../atom/TaskText.styles";
 import { StyledButtonEdit } from "../atom/ButtonEdit.styles copy 2";
 import { StyledButtonDelete } from "../atom/ButtonDelete.styles copy";
-import { TaskData } from "../../data/TaskData";
 
-const TaskList = () => {
-  const [tasks, setTasks] = useState(TaskData);
+const TaskList = ({ taskList }) => {
 
   return (
     <StyledWrapper>
-      {tasks.map((item) => (
+      {taskList.map((item) => (
         <div className="center" key={item.id}>
               <StyledContainer>
                 <TaskTitle>{item.title}</TaskTitle>
