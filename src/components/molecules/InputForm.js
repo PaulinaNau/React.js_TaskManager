@@ -53,7 +53,7 @@ const InputForm = () => {
           </div>
         </form>
       </StyledWrapper>
-      <TaskList taskList={taskList}/>
+      <TaskList taskList={taskList} />
     </>
   );
 };

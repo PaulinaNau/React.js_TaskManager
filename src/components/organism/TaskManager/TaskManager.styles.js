@@ -23,7 +23,7 @@ export const StyledContainer = styled.div`
     text-align: left;
     border-radius: 20px;
     border: none;
-    background-color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme, done }) => done ? theme.color.grey : theme.color.white};
     margin: 10px;
     padding: 20px;
 `
