@@ -13,6 +13,7 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Routes>
           <Route exact path="/" element={<NewTaskManager />}></Route>
+          <Route exact path="/news" element={<NewTaskManager />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </ThemeProvider>

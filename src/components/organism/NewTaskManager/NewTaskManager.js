@@ -15,7 +15,9 @@ const NewTaskManager = () => {
   const [description, setDescription] = useState("");
   const [taskList, setTaskList] = useState(TaskData);
 
-  const addTask = () => {
+  const addTask = (e) => {
+    e.preventDefault();
+
     const newTask = {
       title: title,
       body: description,
@@ -40,7 +42,9 @@ const NewTaskManager = () => {
     setTaskList(updatedDeleteTaskList);
   };
 
-  const handleImport = () => {
+  const handleImport = (e) => {
+    e.preventDefault();
+
     const importedData = ImportData.map((item) => ({
       title: item.title,
       body: item.body,
@@ -49,14 +53,13 @@ const NewTaskManager = () => {
     }));
 
     setTaskList([...importedData, ...taskList]);
-    console.log(taskList);
   };
 
   return (
     <>
       <StyledHeader>Personal Task Manager</StyledHeader>
       <StyledWrapper $light>
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form>
           <div className="center">
             <StyledInput
               placeholder="Title"
