@@ -1,7 +1,5 @@
 # This is Create React App project
 
-Follow this link to see this project:
-https://task-manager-app-netlify.netlify.app/
 
 ## Main goals
 
@@ -14,6 +12,6 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser or follow the link above.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
