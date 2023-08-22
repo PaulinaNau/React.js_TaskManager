@@ -8,15 +8,14 @@ import { StyledButton } from "../../atom/Button.styles";
 import { TaskTitle, TaskDescription } from "../../atom/TaskText.styles";
 import { StyledButtonDone } from "../../atom/ButtonDone.styles";
 import { StyledButtonDelete } from "../../atom/ButtonDelete.styles";
+import { ImportData } from "../../../data/TaskDataImport";
 
 const NewTaskManager = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [taskList, setTaskList] = useState(TaskData);
 
-  const handleAddTask = (e) => {
-    e.preventDefault();
-
+  const addTask = () => {
     const newTask = {
       title: title,
       body: description,
@@ -34,8 +33,22 @@ const NewTaskManager = () => {
     const updatedTaskList = [...taskList];
     updatedTaskList[index].done = !updatedTaskList[index].done;
     setTaskList(updatedTaskList);
-    console.log(item.done);
-    console.log(item.id);
+  };
+
+  const handleDeleteTask = (index) => {
+    const updatedDeleteTaskList = taskList.filter((item) => item.id !== index);
+    setTaskList(updatedDeleteTaskList);
+  };
+
+  const handleImport = () => {
+    const importedData = ImportData.map((item) => ({
+      title: item.title,
+      body: item.body,
+      id: item.id,
+      done: item.done,
+    }));
+
+    setTaskList([...importedData, ...taskList]);
     console.log(taskList);
   };
 
@@ -43,7 +56,7 @@ const NewTaskManager = () => {
     <>
       <StyledHeader>Personal Task Manager</StyledHeader>
       <StyledWrapper $light>
-        <form onSubmit={handleAddTask}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <div className="center">
             <StyledInput
               placeholder="Title"
@@ -61,22 +74,30 @@ const NewTaskManager = () => {
             />
           </div>
           <div className="center">
-            <StyledButton>Add</StyledButton>
+            <StyledButton onClick={addTask}>Add</StyledButton>
+            <StyledButton $isSecondary onClick={handleImport}>
+              Import
+            </StyledButton>
           </div>
         </form>
       </StyledWrapper>
       <StyledWrapper>
         {taskList.map((item, index) => (
           <>
-            <div className="center" key={index}>
-              <div className={item.done ? "task-done" : "task"}>
+            <div className="center" key={(item.id = index)}>
+              <div
+                className={item.done ? "task-done order-one" : "task order-one"}
+              >
                 <TaskTitle>{item.title}</TaskTitle>
                 <TaskDescription>{item.body}</TaskDescription>
-                <TaskDescription>{(item.id = index)}</TaskDescription>
-                <TaskDescription>{index}</TaskDescription>
               </div>
-              <div>
-                <StyledButtonDelete title="Delete this task" />
+              <div className="order-two additionalButton">
+                <StyledButtonDelete
+                  title="Delete this task"
+                  onClick={() => {
+                    handleDeleteTask(index);
+                  }}
+                />
                 <StyledButtonDone
                   $isDone={item.done}
                   title="Mark as done"

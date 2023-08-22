@@ -7,7 +7,7 @@ export const TaskData = [
     },
     {
         title: "Learn JS",
-        body: "Lorem ipsum",
+        body: "lorem",
         id: 13,
         done: false
     },
