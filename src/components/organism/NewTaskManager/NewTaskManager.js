@@ -5,7 +5,7 @@ import { StyledWrapper } from "./NewTaskManager.styles";
 import { StyledInput } from "../../atom/Input.styles";
 import { StyledTextArea } from "../../atom/TextArea.styles";
 import { StyledButton } from "../../atom/Button.styles";
-import { TaskTitle, TaskDescription } from "../../atom/TaskText.styles";
+import { TaskTitle, TaskDescription, Error } from "../../atom/TaskText.styles";
 import { StyledButtonDone } from "../../atom/ButtonDone.styles";
 import { StyledButtonDelete } from "../../atom/ButtonDelete.styles";
 import { ImportData } from "../../../data/TaskDataImport";
@@ -14,9 +14,17 @@ const NewTaskManager = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [taskList, setTaskList] = useState(TaskData);
+  const [err, setErr] = useState("");
 
   const addTask = (e) => {
     e.preventDefault();
+
+    if (title === "" || description === "") {
+      setErr("All fields are required");
+      return;
+    }
+
+    setErr("");
 
     const newTask = {
       title: title,
@@ -26,7 +34,6 @@ const NewTaskManager = () => {
     };
 
     setTaskList([newTask, ...taskList]);
-    console.log(taskList);
     setTitle("");
     setDescription("");
   };
@@ -75,6 +82,7 @@ const NewTaskManager = () => {
               onChange={(e) => setDescription(e.target.value)}
               required
             />
+            <Error>{err}</Error>
           </div>
           <div className="center">
             <StyledButton onClick={addTask}>Add</StyledButton>

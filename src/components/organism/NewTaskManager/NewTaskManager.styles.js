@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const StyledWrapper = styled.div`
-width: 60vw;
+width: 40vw;
 height: auto;
 background-color: ${({ theme, $light }) => $light ? theme.color.secondary :  theme.color.main};
 flex-direction: row;
@@ -10,8 +10,8 @@ border-radius: 30px;
 padding: 30px;
 margin-bottom: 20px;
 
-@media (max-width: 768px) {
-    width: 90vw;
+@media (max-width: 992px) {
+    width: 80vw;
     height: auto;
     padding: 10px;
   }

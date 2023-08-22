@@ -14,12 +14,11 @@ export const TaskDescription = styled.p`
   font-weight: 400;
   margin: 5px 0;
 `;
-export const Author = styled.p`
-  color: ${({ theme }) => theme.color.main};
+export const Error = styled.p`
+  color: ${({ theme }) => theme.color.red};
   font-family: "Poppins", sans-serif;
   font-size: ${({ theme }) => theme.fontSize.s};
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 `;

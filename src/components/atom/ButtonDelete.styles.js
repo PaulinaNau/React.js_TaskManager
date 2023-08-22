@@ -11,7 +11,7 @@ export const StyledButtonDelete = styled.button`
   color: ${({ theme }) => theme.color.white};
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: 300;
-  margin: 10px;
+  margin: 5px;
   transition: all .3s ease-in-out;
   position: relative;
   display: flex;
