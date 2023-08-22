@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 
-export const StyledButtonEdit = styled.button`
+export const StyledButtonDone = styled.button`
   width: 30px;
   height: 30px;
   text-align: center;
   border-radius: 50px;
   border: none;
-  background-color: ${({ theme }) => theme.color.grey};
+  background-color: ${({ theme, $isDone }) => $isDone ? theme.color.success :  theme.color.grey};;
   color: ${({ theme }) => theme.color.white};
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: 300;
