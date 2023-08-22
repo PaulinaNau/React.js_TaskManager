@@ -82,8 +82,8 @@ const NewTaskManager = () => {
               onChange={(e) => setDescription(e.target.value)}
               required
             />
-            <Error>{err}</Error>
           </div>
+          <div className="center"><Error>{err}</Error></div>
           <div className="center">
             <StyledButton onClick={addTask}>Add</StyledButton>
             <StyledButton $isSecondary onClick={handleImport}>

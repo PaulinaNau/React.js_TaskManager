@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
   }
 }
@@ -25,14 +25,14 @@ body {
 .order-one {
   display: flex;
   order: 1;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 768px) {
     order: 2;
   }
 }
 .order-two {
   display: flex;
   order: 2;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 768px) {
     order: 1;
   }
 }
@@ -45,7 +45,7 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   margin: 0;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 768px) {
     flex-direction: row;
     justify-content: left;
   }

@@ -10,10 +10,16 @@ border-radius: 30px;
 padding: 30px;
 margin-bottom: 20px;
 
+@media (max-width: 1200px) {
+    width: 60vw;
+    height: auto;
+    padding: 30px 10px;
+  }
+
 @media (max-width: 992px) {
     width: 80vw;
     height: auto;
-    padding: 10px;
+    padding: 30px 10px;
   }
 `
 
